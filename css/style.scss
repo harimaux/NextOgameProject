@@ -33,7 +33,7 @@ body {
     position: absolute;
     right: 0;
     align-items: flex-end;
-    width: 600px;
+    width: 520px;
     padding: 1rem;
     color: $paleBlue;
     font-family: 'Share Tech', sans-serif;
@@ -68,7 +68,7 @@ body {
     }
 }
 
-//REGISTER
+/* ----------------- REGISTER ----------------- */
 
 .registerForm {
     display: flex;
@@ -113,4 +113,33 @@ body {
     input::placeholder {
         color: $paleBlue;
     }
+}
+
+/* ----------------- LOGGED IN ----------------- */
+
+
+.loggedInBackground {
+width: 100%;
+height: 100vh;
+position: absolute;
+z-index: -1;
+background-image: url('/images/mainBackground.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+}
+
+.loggedInUserData {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 1rem;
+}
+
+.serverTime {
+    display: none;
+}
+
+.showServerTime {
+    display: flex;
 }
