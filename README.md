@@ -1,2 +1,2 @@
 # NextOgameProject
-MMO game prohect/PHP, JS
+MMO game project/PHP, JS
