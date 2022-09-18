@@ -6,7 +6,111 @@
     box-sizing: border-box;
 }
 
+$paleBlue: rgb(82, 180, 219);
+$dark: rgb(27, 27, 27);
+$darkTransparent: rgba(27, 27, 27, 0.863);
+
 body {
     background-color: gray;
 }
 
+/* ----------------- INDEX ----------------- */
+
+.indexBackground {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    background-image: url('/images/image_(24).jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.indexFormBox {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    align-items: flex-end;
+    width: 600px;
+    padding: 1rem;
+    color: $paleBlue;
+    font-family: 'Share Tech', sans-serif;
+    background-color: $darkTransparent;
+    border-radius: 0px 0px 0px 10px;
+
+    a {
+        text-decoration: none;
+        color: $paleBlue;
+        padding: .5rem;
+        border: 1px solid $paleBlue;
+        border-radius: 5px;
+        background-color: $dark;
+    }
+
+    input {
+        padding: .5rem;
+        background-color: $dark;
+        border: 1px solid $paleBlue;
+        border-radius: 5px;
+        margin-left: 1rem;
+        color: $paleBlue;
+    }
+
+    input::placeholder {
+        color: $paleBlue;
+    }
+
+    p {
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+    }
+}
+
+//REGISTER
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $paleBlue;
+    font-family: 'Share Tech', sans-serif;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        background-color: $darkTransparent;
+        padding: 2rem;
+        padding-bottom: 5rem;
+        border-radius: 10px;
+    }
+
+    p {
+        transform: translateY(-50px);
+    }
+
+    a {
+        text-decoration: none;
+        color: $paleBlue;
+        padding: .5rem;
+        border: 1px solid $paleBlue;
+        border-radius: 5px;
+        background-color: $dark;
+    }
+
+    input {
+        width: 400px;
+        padding: .5rem;
+        margin: .5rem;
+        background-color: $dark;
+        border: 1px solid $paleBlue;
+        border-radius: 5px;
+        color: $paleBlue;
+    }
+
+    input::placeholder {
+        color: $paleBlue;
+    }
+}

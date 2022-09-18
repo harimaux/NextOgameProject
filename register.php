@@ -21,20 +21,20 @@ if (!isset($_SESSION)) {
 
 <body>
 
+    <div class="indexBackground">
 
-
-    <div class="register_login_background"></div>
-
-    <div class="register_container">
-        <form action="register_data.php" method="POST">
-            <input type="text" name="username" placeholder="Username.." required>
-            <input type="email" name="email" placeholder="Email..">
-            <input type="password" name="password" placeholder="Password..">
-            <div class=""><input type="submit" name="submitUser" value="Register"></div>
-        </form>
     </div>
 
-    <a href="index.php">Home</a>
+    <div class="registerForm">
+        <form action="register_data.php" method="POST">
+            <input type="text" name="username" placeholder="Username.." required>
+            <input type="email" name="email" placeholder="Email.." required>
+            <input type="password" name="password" placeholder="Password.." required>
+            <input type="submit" name="submitUser" value="Register">
+        </form>
+
+        <p>Have an account? <span><a href="index.php">Log In</a></span></p>
+    </div>
 
 </body>
 
