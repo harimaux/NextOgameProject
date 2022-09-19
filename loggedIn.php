@@ -29,55 +29,19 @@ if (!isset($_SESSION['username'])) {
 
     <div class="loggedInUserData">
         <p class="login_note">Hi <?php echo $_SESSION['username']; ?>. You are logged in.</p><br>
-        <a href="logout.php">Log Out</a>
+
+        <a href="logout.php">Log Out</a><br>
+
+        <p id="serverTime"></p>
     </div>
 
-    <div class="serverTime">
-        <?php
-// set default timezone
-date_default_timezone_set('Europe/London'); // CDT
 
-$info = getdate();
-$date = $info['mday'];
-$month = $info['mon'];
-$year = $info['year'];
-$hour = $info['hours'];
-$min = $info['minutes'];
-$sec = $info['seconds'];
-
-echo "<div class='serverDay'>" . $date . "</div>";
-echo "<div class='serverMonth'>" . $month . "</div>";
-echo "<div class='serverYear'>" . $year . "</div>";
-echo "<div class='serverHour'>" . $hour . "</div>";
-echo "<div class='serverMin'>" . $min . "</div>";
-echo "<div class='serverSec'>" . $sec . "</div>";
-
-/* $current_date = date('d/m/Y == H:i:s');
-
-echo "<div class='erverDate'>Current Server Date: " . $current_date . "</div>"; */
+    
 
 
-?>
-    </div>
 
-    <div class="showServerTime">
-        <div class="showDay"></div>
-        <p>/</p>
-        <div class="showMonth"></div>
-        <p>/</p>
-        <div class="showYear"></div>
-        <p> - </p>
-        <div class="showHour"></div>
-        <p>:</p>
-        <div class="showMin"></div>
-        <p>:</p>
-        <div class="showSec"></div>
-    </div>
 
-    <?php
-        date_default_timezone_set('Europe/London'); //e.g. date_default_timezone_set('Asia/Kolkata');
-        echo "<div class='serverDatePHP'>" . date("H:i:s") . "</div>";
-    ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <script src="js/script.js"></script>
 

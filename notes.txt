@@ -1,0 +1,105 @@
+    <div class="serverTime">
+        <?php
+
+date_default_timezone_set('Europe/London');
+
+$info = getdate();
+$date = $info['mday'];
+$month = $info['mon'];
+$year = $info['year'];
+$hour = $info['hours'];
+$min = $info['minutes'];
+$sec = $info['seconds'];
+
+echo "<div class='serverDay'>" . $date . "</div>";
+echo "<div class='serverMonth'>" . $month . "</div>";
+echo "<div class='serverYear'>" . $year . "</div>";
+echo "<div class='serverHour'>" . $hour . "</div>";
+echo "<div class='serverMin'>" . $min . "</div>";
+echo "<div class='serverSec'>" . $sec . "</div>";
+
+$current_date = date('d/m/Y == H:i:s');
+
+echo "<div class='erverDate'>Current Server Date: " . $current_date . "</div>";
+
+
+?>
+    </div>
+
+    <div class="showServerTime">
+        <div class="showDay"></div>
+        <p>/</p>
+        <div class="showMonth"></div>
+        <p>/</p>
+        <div class="showYear"></div>
+        <p> - </p>
+        <div class="showHour"></div>
+        <p>:</p>
+        <div class="showMin"></div>
+        <p>:</p>
+        <div class="showSec"></div>
+    </div>
+
+    <?php
+        date_default_timezone_set('Europe/London');
+        echo "<div class='serverDatePHP'>" . date("H:i:s") . "</div>";
+    ?>
+
+    -----------------------------
+
+    let serverDay = Number(document.querySelector('.serverDay').innerHTML);
+let serverMonth = Number(document.querySelector('.serverMonth').innerHTML);
+let serverYear = Number(document.querySelector('.serverYear').innerHTML);
+let serverHour = Number(document.querySelector('.serverHour').innerHTML);
+let serverMin = Number(document.querySelector('.serverMin').innerHTML);
+let serverSec = Number(document.querySelector('.serverSec').innerHTML);
+
+let showDay = document.querySelector(".showDay");
+let showMonth = document.querySelector(".showMonth");
+let showYear = document.querySelector(".showYear");
+let showHour = document.querySelector(".showHour");
+let showMin = document.querySelector(".showMin");
+let showSec = document.querySelector(".showSec");
+
+
+
+setInterval(timeFromServer, 1000);
+
+function timeFromServer() {
+
+    showDay.innerHTML = `${serverDay}`;
+    showMonth.innerHTML = `${serverMonth}`;
+    showYear.innerHTML = `${serverYear}`;
+    showHour.innerHTML = `${serverHour}`;
+    showMin.innerHTML = `${serverMin}`;
+    showSec.innerHTML = `${serverSec}`;
+
+    if (serverSec >= 59) {
+        serverSec = 0;
+
+        if (serverMin <= 58) {
+
+            serverMin++;
+
+        } else {
+            serverMin = 0;
+
+            serverHour++;
+        }
+
+    } else {
+        serverSec++;
+    }
+
+}
+
+const serverDatePHP = document.querySelector('.serverDatePHP').innerHTML;
+
+var target = new Date("1970-01-01 " + serverDatePHP);
+console.log(target);
+
+var now = new Date();
+var nowDateTime = now.toISOString();
+var nowDate = nowDateTime.split('T')[0];
+var target = new Date(nowDate + 'T' + serverDatePHP);
+console.log(target);
